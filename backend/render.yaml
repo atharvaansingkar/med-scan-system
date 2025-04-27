@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: flask-ocr-service
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn ocr_service:app --bind 0.0.0.0:$PORT
+    plan: free
+    envVars:
+      - key: PORT
+        value: 4001

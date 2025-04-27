@@ -3,6 +3,12 @@
   border-radius: var(--radius);
   border: 1px solid var(--border);
   margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .webcam-feed-header {
@@ -46,6 +52,9 @@
   border-radius: var(--radius);
   background-color: var(--muted);
   aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 700px; /* Increased width */
+  max-height: 450px; /* Increased height */
 }
 
 .webcam-image {
@@ -228,4 +237,22 @@
   font-size: 0.75rem;
   color: var(--muted-foreground);
   margin: 0;
+}
+
+.captured-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 700px; /* Match the webcam feed width */
+  max-height: 450px; /* Match the webcam feed height */
+  overflow: hidden;
+}
+
+.captured-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
