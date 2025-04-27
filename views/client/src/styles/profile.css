@@ -1,0 +1,486 @@
+.profile-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.page-description {
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.profile-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab-button.active {
+  color: var(--foreground);
+  font-weight: 500;
+  border-bottom: 2px solid var(--primary);
+  margin-bottom: -1px;
+}
+
+.tab-button svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.tab-content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.profile-card {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.card-title.danger {
+  color: var(--destructive);
+}
+
+.card-description {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+/* Avatar section */
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .avatar-section {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 9999px;
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+.avatar-info {
+  flex: 1;
+}
+
+.avatar-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+.avatar-description {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin: 0 0 0.75rem;
+}
+
+.avatar-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.avatar-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: transparent;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+.avatar-button:hover {
+  background-color: var(--accent);
+}
+
+.avatar-button svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--border);
+  margin: 1.5rem 0;
+}
+
+/* Profile form */
+.profile-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.form-input {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: transparent;
+  color: var(--foreground);
+  font-size: 0.875rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.25);
+}
+
+.form-input:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-input.with-icon {
+  padding-left: 2.5rem;
+}
+
+.form-description {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.password-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  width: 1rem;
+  height: 1rem;
+  color: var(--muted-foreground);
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--muted-foreground);
+  cursor: pointer;
+}
+
+.profile-button {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  border: none;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 0.875rem;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.profile-button:hover {
+  background-color: var(--primary-dark, hsl(210, 100%, 40%));
+}
+
+/* Toggle section */
+.toggle-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-info {
+  flex: 1;
+}
+
+.toggle-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+.toggle-description {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 2.5rem;
+  height: 1.5rem;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--muted);
+  border-radius: 9999px;
+  transition: 0.4s;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  left: 0.25rem;
+  bottom: 0.25rem;
+  background-color: var(--background);
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--primary);
+}
+
+input:focus + .toggle-slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(1rem);
+}
+
+/* Info box */
+.info-box {
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+.info-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+}
+
+.info-button {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: transparent;
+  font-size: 0.75rem;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+.info-button:hover {
+  background-color: var(--accent);
+}
+
+/* Danger zone */
+.danger-box {
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(var(--destructive-rgb), 0.2);
+}
+
+.danger-info {
+  margin-bottom: 1rem;
+}
+
+.danger-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+.danger-description {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.danger-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  border: none;
+  background-color: var(--destructive);
+  color: var(--destructive-foreground);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.danger-button:hover {
+  background-color: var(--destructive-dark, hsl(0, 84.2%, 50.2%));
+}
+
+.danger-button svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Sessions table */
+.table-container {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+
+.sessions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sessions-table th {
+  background-color: var(--muted);
+  font-weight: 500;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
+.sessions-table td {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+
+.device-column {
+  font-weight: 500;
+}
+
+.session-badge {
+  display: inline-flex;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.session-badge.current {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.session-badge.active {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  border: 1px solid var(--border);
+}
+
+.session-badge.inactive {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+}
+
+.session-button {
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: transparent;
+  font-size: 0.75rem;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+.session-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.session-button:hover:not(:disabled) {
+  background-color: var(--accent);
+}
+
+.card-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.footer-note {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin: 0;
+}

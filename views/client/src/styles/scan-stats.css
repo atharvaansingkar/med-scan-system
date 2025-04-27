@@ -1,0 +1,77 @@
+.scan-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .scan-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat-card {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.stat-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.stat-number {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-unit {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+}
+
+.stat-icon.today {
+  background-color: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary);
+}
+
+.stat-icon.expired {
+  background-color: rgba(var(--destructive-rgb), 0.1);
+  color: var(--destructive);
+}
+
+.stat-icon.accuracy {
+  background-color: rgba(var(--success-rgb), 0.1);
+  color: var(--success);
+}
+
+.stat-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
