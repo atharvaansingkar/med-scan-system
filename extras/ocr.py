@@ -10,7 +10,7 @@ app = Flask(__name__)
 # CORS only for your React origin
 CORS(app, resources={
     r"/process-webcam": {
-        "origins": "http://localhost:3000",
+        "origins": "https://med-scan-dashboard.onrender.com",
         "methods": ["POST","OPTIONS"],
         "allow_headers": ["Content-Type"]
     }
@@ -43,7 +43,7 @@ def validate_image(image_b64):
         return False
 
 @app.route('/process-webcam', methods=['POST','OPTIONS'])
-@cross_origin(origins="http://localhost:3000", methods=["POST","OPTIONS"])
+@cross_origin(origins="https://med-scan-dashboard.onrender.com", methods=["POST","OPTIONS"])
 def handle_scan():
     # Let OPTIONS preflight pass
     if request.method == 'OPTIONS':

@@ -57,7 +57,7 @@ export default function WebcamFeed() {
 
       try {
         const res = await fetch(
-          process.env.REACT_APP_OCR_URL || "http://localhost:4001/process-webcam",
+          process.env.REACT_APP_OCR_URL || "https://med-scan-system.onrender.com/process-webcam",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
