@@ -13,7 +13,6 @@ import {
   LogOutIcon,
   MenuIcon,
   MoonIcon,
-  SettingsIcon,
   SunIcon,
   UserIcon,
 } from "../icons/Icons"
@@ -22,7 +21,6 @@ function DashboardNav() {
   const { user, signOut } = useAuth()
   const location = useLocation()
   const { theme, toggleTheme } = useTheme()
-  const [notificationCount, setNotificationCount] = useState(3)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [userMenuOpen, setUserMenuOpen] = useState(false)
 
@@ -36,7 +34,6 @@ function DashboardNav() {
     { name: "Dashboard", href: "/dashboard" },
     { name: "Scan History", href: "/dashboard/history" },
     { name: "Reports", href: "/dashboard/reports" },
-    { name: "Settings", href: "/dashboard/settings" },
   ]
 
   return (
@@ -104,10 +101,7 @@ function DashboardNav() {
           </button>
 
           {/* Notifications */}
-          <button className="notifications-button">
-            <BellIcon />
-            {notificationCount > 0 && <span className="notification-badge">{notificationCount}</span>}
-          </button>
+         
 
           {/* User menu */}
           <div className="user-menu-container">
@@ -122,10 +116,6 @@ function DashboardNav() {
                 <Link to="/dashboard/profile" className="user-menu-item" onClick={() => setUserMenuOpen(false)}>
                   <UserIcon />
                   <span>My Profile</span>
-                </Link>
-                <Link to="/dashboard/settings" className="user-menu-item" onClick={() => setUserMenuOpen(false)}>
-                  <SettingsIcon />
-                  <span>System Settings</span>
                 </Link>
                 <div className="user-menu-separator"></div>
                 <button

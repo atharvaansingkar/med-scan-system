@@ -1,7 +1,9 @@
 .scan-history-page {
-  max-width: 1400px;
+  max-width: 1400px; /* Increase the width of the page */
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 1rem; /* Reduce padding slightly to fit more content */
+  position: relative;
+  top: -1rem; /* Shift the entire page slightly upward */
 }
 
 .page-header {
@@ -240,29 +242,43 @@
   padding: 1.5rem;
 }
 
+/* Ensure the table container fills the available space */
 .table-container {
+  width: 100%; /* Take up the full width of the parent container */
+  max-width: 98%; /* Increase the width slightly */
+  height: 400px; /* Increase the height to fit more content */
+  margin: 0 auto; /* Center the table horizontally */
+  margin-top: -1.5rem; /* Shift the table slightly upward */
+  overflow-y: auto; /* Allow vertical scrolling for remaining details */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow-x: auto;
+  padding: 0.5rem; /* Add padding around the table */
+  box-sizing: border-box;
+  background-color: var(--card); /* Ensure consistent background */
 }
 
+/* Ensure the table spans the full width */
 .history-table {
-  width: 100%;
+  width: 100%; /* Ensure the table spans the full width of the container */
   border-collapse: collapse;
+  table-layout: fixed; /* Ensure consistent column widths */
+}
+
+.history-table th,
+.history-table td {
+  padding: 0.75rem 1rem; /* Add consistent padding for better spacing */
+  text-align: left;
+  border: 1px solid var(--border); /* Add borders for better visibility */
 }
 
 .history-table th {
   background-color: var(--muted);
-  text-align: left;
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600; /* Keep the header text bold */
 }
 
 .history-table td {
-  padding: 0.75rem 1rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* Keep the font size consistent */
 }
 
 .history-table tr.selected {
@@ -314,7 +330,7 @@
 
 .empty-table {
   text-align: center;
-  padding: 3rem 0;
+  padding: 2rem 0;
   color: var(--muted-foreground);
 }
 

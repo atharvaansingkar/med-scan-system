@@ -1,7 +1,7 @@
 .dashboard-page {
   max-width: 1400px;
   margin: 0 auto;
-  padding-bottom: 5rem;
+
 }
 
 .dashboard-grid {
@@ -20,4 +20,15 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.control-panel {
+  height: 4rem;
+  background-color: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

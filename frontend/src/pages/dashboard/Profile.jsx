@@ -146,13 +146,7 @@ function Profile() {
           <ShieldIcon />
           <span>Security</span>
         </button>
-        <button
-          className={`tab-button ${activeTab === "sessions" ? "active" : ""}`}
-          onClick={() => setActiveTab("sessions")}
-        >
-          <HistoryIcon />
-          <span>Sessions</span>
-        </button>
+       
       </div>
 
       <div className="tab-content">
@@ -352,65 +346,6 @@ function Profile() {
                     Delete Account
                   </button>
                 </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Sessions Tab */}
-        {activeTab === "sessions" && (
-          <div className="sessions-tab">
-            <div className="profile-card">
-              <div className="card-header">
-                <h2 className="card-title">Active Sessions</h2>
-                <p className="card-description">Manage devices and locations where you're currently logged in.</p>
-              </div>
-              <div className="card-content">
-                <div className="table-container">
-                  <table className="sessions-table">
-                    <thead>
-                      <tr>
-                        <th>Device</th>
-                        <th>Location</th>
-                        <th>IP Address</th>
-                        <th>Last Active</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {sessionData.map((session) => (
-                        <tr key={session.id}>
-                          <td className="device-column">{session.device}</td>
-                          <td>{session.location}</td>
-                          <td>{session.ipAddress}</td>
-                          <td>{session.lastActive}</td>
-                          <td>
-                            <span className={`session-badge ${session.status}`}>
-                              {session.status === "current"
-                                ? "Current Session"
-                                : session.status === "active"
-                                  ? "Active"
-                                  : "Inactive"}
-                            </span>
-                          </td>
-                          <td>
-                            <button
-                              className="session-button"
-                              onClick={() => terminateSession(session.id)}
-                              disabled={session.status === "current"}
-                            >
-                              {session.status === "current" ? "Current" : "Terminate"}
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div className="card-footer">
-                <p className="footer-note">Note: Terminating a session will log out that device immediately.</p>
               </div>
             </div>
           </div>

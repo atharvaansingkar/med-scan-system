@@ -9,7 +9,6 @@ import Dashboard from "./pages/dashboard/Dashboard"
 import ScanHistory from "./pages/dashboard/ScanHistory"
 import Reports from "./pages/dashboard/Reports"
 import Profile from "./pages/dashboard/Profile"
-import Settings from "./pages/dashboard/Settings"
 
 // Protected route component
 const ProtectedRoute = ({ children }) => {
@@ -47,7 +46,6 @@ function App() {
         <Route path="history" element={<ScanHistory />} />
         <Route path="reports" element={<Reports />} />
         <Route path="profile" element={<Profile />} />
-        <Route path="settings" element={<Settings />} />
       </Route>
 
       {/* Redirect root to dashboard or login */}
