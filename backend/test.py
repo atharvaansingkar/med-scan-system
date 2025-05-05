@@ -8,7 +8,11 @@ def imagew(product_name):
         return ("08/2024", "07/2026")
     elif product_name == "roko":
         return ("07/2024", "06/2027")
-    elif product_name == "evion 400":
-        return ("09/2020", "11/2022")
+    elif product_name == "boric acid i.p.":
+        return ("03/2024", "02/2027")
+    elif product_name == "dolo-650":
+        return ("09/2023", "08/2027")
+    elif product_name == "foracort":
+        return ("08/2024", "07/2027")
     
     return (None, None)

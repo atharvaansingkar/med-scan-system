@@ -56,14 +56,15 @@ export default function WebcamFeed() {
       addCapturedImage(imgData);
 
       try {
-        const res = await fetch(
-          process.env.REACT_APP_OCR_URL || "http://localhost:4001/process-webcam",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ image: imgData }),
-          }
-        );
+        const OCR_URL = process.env.REACT_APP_OCR_URL;
+        if (!OCR_URL) throw new Error("OCR URL is not defined in environment variables.");
+      
+        const res = await fetch(OCR_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ image: imgData }),
+        });
+      
         const json = await res.json();
 
         if (!res.ok || !json.success) {
