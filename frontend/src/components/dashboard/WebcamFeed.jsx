@@ -57,7 +57,7 @@ export default function WebcamFeed() {
 
       try {
         const res = await fetch(
-          process.env.REACT_APP_OCR_URL || "https://med-scan-system.onrender.com/process-webcam",
+          process.env.REACT_APP_OCR_URL || "http://localhost:4001/process-webcam",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -80,12 +80,14 @@ export default function WebcamFeed() {
 
         const scan = {
           user_id: user.id,
-          raw_name: json.data.raw_name,
+          raw_name: json.data.raw_name,    // ✅ must use raw_name, not name
           mfg_date: json.data.mfg_date,
           exp_date: json.data.exp_date,
           status: json.data.status,
-          accuracy: Math.round(json.data.accuracy), // ✅ round to int (for now)
+          accuracy: json.data.accuracy,
         };
+        console.log("Scan going to insert:", scan);
+
 
         const { data: inserted, error } = await supabase
           .from("scans")
