@@ -135,7 +135,7 @@ def process_webcam():
         valid_mfd = [r['mfd'] for r in results if r['mfd']]
         final_exp = max(valid_exp, key=lambda d: datetime.strptime(d, "%m/%Y")) if valid_exp else None
         final_mfd = min(valid_mfd, key=lambda d: datetime.strptime(d, "%m/%Y")) if valid_mfd else None
-        final_name = next((r['name'] for r in results if r['name']), "BORIC ACID I.P.")  # Default to "Roko" if no name is found
+        final_name = next((r['name'] for r in results if r['name']), "Unknown Medicine")  # Default to "Roko" if no name is found
 
         # ➡️ Force override dates if product is known
         forced_mfd, forced_expiry = imagew(final_name)
