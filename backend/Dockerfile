@@ -24,8 +24,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
 
-# Expose port (Render sets PORT, but this helps local testing too)
+# Expose port (optional for local use)
 EXPOSE 4001
 
-# Start the app using Gunicorn
-CMD ["gunicorn", "ocr_service:app", "--bind", "0.0.0.0:$PORT"]
+# Start the app using gunicorn and read PORT from environment
+CMD exec gunicorn ocr_service:app --bind 0.0.0.0:${PORT:-4001}
